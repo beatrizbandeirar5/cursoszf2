@@ -1,0 +1,20 @@
+<h1>funcionarios</h1>
+<br/>
+
+    <table class="table table-bordered table-responsive">
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Ação</th>
+    </tr>
+    <?php foreach($this->data as $entity): ?>
+    <tr>
+        <td><?php echo $entity->getIdFuncionario();?></td>
+        <td><?php echo $entity->getNomeFuncionario();?></td>
+        <td>
+            <a class="btn btn-primary" href="<?php echo $this->url('loja-admin-interna',
+                    array('controller'=>'funcionario', 'action'=>'edit','id'=>$entity->getIdFuncionario()));?>">Editar</a>
+        </td>
+    </tr>
+    <?php endforeach; ?> 
+</table>

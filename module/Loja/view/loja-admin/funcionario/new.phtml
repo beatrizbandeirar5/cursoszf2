@@ -1,0 +1,15 @@
+<h3>Novo Funcionario</h3>
+
+<br/>
+<?php
+$form = $this->form;
+
+$form->setAttribute('action', $this->url('loja-admin', array('controller'=>'funcionario','action'=>'new')));
+$form->prepare();
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id_funcionario'));
+echo $this->formRow($form->get('nome_funcionario')).'<br/>'; 
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+
+

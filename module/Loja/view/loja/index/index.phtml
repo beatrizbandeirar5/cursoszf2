@@ -1,0 +1,14 @@
+<h1>funcionarios</h1>
+<br/>
+  <table class="table"> 
+    <?php foreach ($this->funcionario as $funcionario );?>
+    <tr>
+    <th>ID</th>
+    <th>Nome<th>
+    </tr>
+    <tr>
+    <td><?php echo $funcionario->getIdFuncionario();?></td>
+    <td><?php echo $funcionario->getNomeFuncionario(); ?></td>
+    </tr>
+    <?phpendforeach;?>
+  </table>
