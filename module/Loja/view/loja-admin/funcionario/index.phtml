@@ -1,5 +1,8 @@
 <h1>funcionarios</h1>
 <br/>
+<p>
+    <a href="<?php echo $this->url('loja-admin',array('controller'=>'funcionario','action'=>'new'));?>">Novo</a>
+</p>
 
     <table class="table table-bordered table-responsive">
     <tr>
@@ -7,13 +10,15 @@
         <th>Nome</th>
         <th>Ação</th>
     </tr>
-    <?php foreach($this->data as $entity): ?>
+    <?php foreach($this->list as $entity): ?>
     <tr>
         <td><?php echo $entity->getIdFuncionario();?></td>
         <td><?php echo $entity->getNomeFuncionario();?></td>
         <td>
             <a class="btn btn-primary" href="<?php echo $this->url('loja-admin-interna',
                     array('controller'=>'funcionario', 'action'=>'edit','id'=>$entity->getIdFuncionario()));?>">Editar</a>
+                   <a class="btn btn-primary btn-danger" href="<?php echo $this->url('loja-admin-interna',
+                    array('controller'=>'funcionario', 'action'=>'delete','id'=>$entity->getIdFuncionario()));?>">Deletar</a>
         </td>
     </tr>
     <?php endforeach; ?> 

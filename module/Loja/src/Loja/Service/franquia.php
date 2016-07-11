@@ -1,10 +1,8 @@
 <?php
-namespace Loja\Service;
-use Doctrine\ORM\EntityManager;
-use Loja\Entity\funcionario as funcionarioEntity;
-use Livraria\Entity\Configurator;
 
-class funcionario {
+namespace Loja\Service;
+
+class franquia {
     /**
      * @var EntityManager
      */
@@ -13,25 +11,28 @@ class funcionario {
       $this->em = $em;  
     }
     public function insert(array $data){
-        $entity = new funcionarioEntity($data);
+        $entity = new franquiaEntity($data);
         $this->em->persist($entity);
         $this->em->flush();
         return $entity;
+       
     }
     
     public function update(array $data){
-        $entity = $this->em->getReference('Loja\Entity\funcionario', $data['id']);
-        $entity->setNomeFuncionario($data['nome_funcionario']);
+        $entity = $this->em->getReference('Loja\Entity\franquia', $data['id']);
+        $entity->setNomeFranquia($data['nome_franquia']);
+        $entity->setCnpjFranquia($data['nome_franquia']);
+        $entity->setfuncionarioIdFuncionario($data['nome_franquia']);
         $this->em->persist($entity);
         $this->em->flush();
         return $entity;
     }
-    public function delete($id_funcionario){
-        $entity = $this->em->getReference('Loja\Entity\funcionario', $id_funcionario);
+    public function delete($id_franquia){
+        $entity = $this->em->getReference('Loja\Entity\funcionario', $id_franquia);
         if($entity){
             $this->em->remove($entity);
             $this->em->flush();
-            return $id_funcionario;
+            return $id_franquia;
         }
     }
 }

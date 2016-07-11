@@ -1,14 +1,14 @@
 <h1>funcionarios</h1>
 <br/>
-  <table class="table"> 
-    <?php foreach ($this->funcionario as $funcionario );?>
+<table class="table table-bordered table-responsive"> 
     <tr>
-    <th>ID</th>
-    <th>Nome<th>
+        <th>ID</th>
+        <th>Nome</th>
     </tr>
+    <?php foreach ($this->funcionario as $funcionario): ?>
     <tr>
-    <td><?php echo $funcionario->getIdFuncionario();?></td>
-    <td><?php echo $funcionario->getNomeFuncionario(); ?></td>
+        <td><?php echo $funcionario->getIdFuncionario(); ?></td>
+        <td><?php echo $funcionario->getNomeFuncionario(); ?></td>
     </tr>
-    <?phpendforeach;?>
-  </table>
+<?php endforeach; ?>
+</table>

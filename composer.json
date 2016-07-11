@@ -11,10 +11,10 @@
         "php": ">=5.5",
         "zendframework/zendframework": "^2.5.3",
         "zendframework/zend-mvc": "~2.6.3",
-        "doctrine/doctrine-orm-module": "dev-master"
+        "doctrine/doctrine-orm-module": "dev-master",
+        "zendframework/zend-navigation": "^2.8"
     },
       "minimum-stability": "dev"
       
         
 }
-  

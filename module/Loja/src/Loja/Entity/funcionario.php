@@ -24,8 +24,8 @@ class funcionario {
      */
     protected $nomeFuncionario;
     
-        function getIdFuncionario() {
-        return $this->idFuncionario;
+    function getIdFuncionario() {
+    return $this->idFuncionario;
     }
 
     function getNomeFuncionario() {

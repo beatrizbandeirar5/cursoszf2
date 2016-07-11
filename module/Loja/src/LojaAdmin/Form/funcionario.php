@@ -18,11 +18,13 @@ class funcionario extends Form {
                 'name' => 'nome_funcionario',
                 'options' => array(
                     'type' => 'text',
-                    'label' => 'Nome'
+                    'label' => 'Nome',
+                    
                 ),
                 'attributes' => array(
                     'id' => 'nome_funcionario',
-                    'placeholder' => 'Entre com o nome'
+                    'placeholder' => 'Entre com o nome',
+                    'class' => 'form-control'
                     )
             ));
             $this->add(array(
@@ -30,7 +32,7 @@ class funcionario extends Form {
                 'type' => 'Zend\Form\Element\Submit',
                 'attributes' => array(
                 'value' => 'Salvar',
-                'class' => 'btn-success'
+                'class' => 'btn btn-success btn-block'
                 )
             ));
             

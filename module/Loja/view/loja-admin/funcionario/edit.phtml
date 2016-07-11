@@ -2,13 +2,21 @@
 
 <br/>
 <?php
-$form = $this->form;
 $form->setAttribute('action', $this->url('loja-admin-interna', array('controller'=>'funcionario','id'=>$form->get('id_funcionario')->getValue(),'action'=>'edit')));
-$form->prepare();
-echo $this->form()->openTag($form);
-echo $this->formHidden($form->get('id_funcionario'));
-echo $this->formRow($form->get('nome_funcionario')).'<br/>'; 
-echo $this->formSubmit($form->get('submit'));
-echo $this->form()->closeTag();
+$form->prepare();?>
+<?php echo $this->form()->openTag($form);?>
+<?php echo $this->formHidden($form->get('id_funcionario'));?>
+<div class="row form-group">
+    <div class="col-md-3">
+        <?php echo $this->formLabel($form->get('nome_funcionario')) ?>
+        <?php echo $this->formInput($form->get('nome_funcionario')) ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+       <?php echo $this->formSubmit($form->get('submit')); ?>
+    </div>
+</div>
+<?php echo $this->form()->closeTag();?>
 
 
