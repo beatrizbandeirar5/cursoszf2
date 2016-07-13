@@ -42,7 +42,6 @@ protected $em;
         $entity = $repository->find($this->params()->fromRoute('id')); 
         
         if($this->params()->fromRoute('id'));
-       
          
          $form->setData($entity->toArray());
         

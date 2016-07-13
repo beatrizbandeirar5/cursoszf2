@@ -28,7 +28,7 @@ class franquia {
         return $entity;
     }
     public function delete($id_franquia){
-        $entity = $this->em->getReference('Loja\Entity\funcionario', $id_franquia);
+        $entity = $this->em->getReference('Loja\Entity\franquia', $id_franquia);
         if($entity){
             $this->em->remove($entity);
             $this->em->flush();

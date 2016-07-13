@@ -38,9 +38,8 @@ protected $em;
         $repository = $this->getEm()->getRepository('Loja\Entity\franquia');
         $entity = $repository->find($this->params()->fromRoute('id')); 
         
-        if($this->params()->fromRoute('id'));  
-         $form->setData($entity->toArray());
-        
+        if($this->params()->fromRoute('id'));
+            $form->setData($entity->toArray());
         if($request->isPost()) {
             if($form->isValid()){
             $form->getData($request->getPost());
@@ -65,7 +64,6 @@ protected $em;
      if (null === $this->em){
         $this->em = $this->getServiceLocator()->get('Doctrine\ORM\Entity\Manager');
      }
-     
      return $this->em;
   }
 }
