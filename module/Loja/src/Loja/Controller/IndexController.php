@@ -12,10 +12,12 @@ class IndexController extends AbstractActionController
         $em = $this->getServiceLocator()->GET('Doctrine\ORM\EntityManager');
         $repo = $em->getRepository('Loja\Entity\funcionario');
         $funcionario = $repo->findAll();
+
         /**
         $funcionarioService = $this->get('Loja\Model\funcionarioService');
         $funcionario = $funcionarioService->fetchAll();
         */
         return new ViewModel(array('funcionario'=>$funcionario));
+        
     }
 }

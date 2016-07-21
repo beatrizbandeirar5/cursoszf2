@@ -1,0 +1,27 @@
+<h3>Editando Franquia</h3>
+
+<br/>
+<?php
+$form->setAttribute('action', $this->url('loja-admin-interna', 
+        array('controller'=>'franquia','id'=>$form->get('id_franquia')->getValue(),'action'=>'edit')));
+$form->prepare();?>
+<?php echo $this->form()->openTag($form);?>
+<?php echo $this->formHidden($form->get('id_franquia'));?>
+<div class="row form-group">
+    <div class="col-md-3">
+        <?php echo $this->formLabel($form->get('nome_franquia')) ?>
+        <?php echo $this->formInput($form->get('nome_franquia')) ?>
+        <?php echo $this->formLabel($form->get('cnpj_franquia')) ?>
+        <?php echo $this->formInput($form->get('cnpj_franquia')) ?>
+        <?php echo $this->formLabel($form->get('funcionario')) ?>
+        <?php echo $this->formSelect($form->get('funcionario')) ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
+       <?php echo $this->formSubmit($form->get('submit')); ?>
+    </div>
+</div>
+<?php echo $this->form()->closeTag();?>
+
+

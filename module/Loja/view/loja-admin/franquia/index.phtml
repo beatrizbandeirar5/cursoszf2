@@ -1,0 +1,30 @@
+<h1>franquias</h1>
+<br/>
+<p>
+    <a href="<?php echo $this->url('loja-admin',array('controller'=>'franquia','action'=>'new'));?>">Novo</a>
+</p>
+
+    <table class="table table-bordered table-responsive">
+    <tr>
+        <th>ID</th>
+        <th>Nome da Franquia </th>
+        <th>Cnpj Franquia </th> 
+        <th>Funcionario</th>
+        <th>Ação</th>
+    </tr>
+    <?php foreach($this->list as $entity): ?>
+    <tr>
+        <td><?php echo $entity->getIdFranquia();?></td>
+        <td><?php echo $entity->getNomeFranquia();?></td>
+        <td><?php echo $entity->getCnpjFranquia();?></td>
+        <td><?php echo $entity->getFuncionarioIdFuncionario()->getNomeFuncionario();?></td>
+        
+        <td>
+            <a class="btn btn-primary" href="<?php echo $this->url('loja-admin-interna',
+                    array('controller'=>'franquia', 'action'=>'edit','id'=>$entity->getIdFranquia()));?>">Editar</a>
+                   <a class="btn btn-primary btn-danger" href="<?php echo $this->url('loja-admin-interna',
+                    array('controller'=>'franquia', 'action'=>'delete','id'=>$entity->getIdFranquia()));?>">Deletar</a>
+        </td>
+    </tr>
+    <?php endforeach; ?> 
+</table>

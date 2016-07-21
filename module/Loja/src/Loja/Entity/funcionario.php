@@ -5,8 +5,13 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity
  * @ORM\Table(name="funcionario")
+ * @ORM\Entity(repositoryClass="Loja\Entity\funcionarioRepository")
  */
 class funcionario {
+     public function __construct($options = null){
+       Configurator::configure($this, $options);
+       $this->franquias = new ArrayCollection();
+    } 
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -20,7 +25,11 @@ class funcionario {
      * @var string
      */
     protected $nomeFuncionario;
-    
+    /**
+      * @ORM\OneToMany(targetEntity="Loja\Entity\franquia", mappedBy="funcionario")
+      */
+    protected $franquias;
+     
     function getIdFuncionario() {
     return $this->idFuncionario;
     }
@@ -36,10 +45,7 @@ class funcionario {
     function setNomeFuncionario($nome_funcionario) {
         $this->nomeFuncionario = $nome_funcionario;
     }
-      public function __construct($options = null){
-       Configurator::configure($this, $options);
-    } 
-
+   
     public function toString(){
         return $this->nomeFuncionario;
     }

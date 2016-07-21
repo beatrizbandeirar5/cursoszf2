@@ -6,6 +6,7 @@ use Zend\Mvc\MvcEvent;
 use Loja\Model\funcionarioTable;
 use Loja\Service\funcionario as FuncionarioService;
 use Loja\Service\franquia as FranquiaService;
+use LojaAdmin\Form\franquia as FranquiaFrm;
 use Loja\Service\cliente as ClienteService;
 class Module{
     public function getConfig()
@@ -34,8 +35,18 @@ class Module{
                 return $funcionarioService;
                 },
                   'Loja\Service\funcionario' => function($service){
-                    return new funcionarioService($service->get('Doctrine\ORM\EntityManager'));
-                  }
+                    return new FuncionarioService($service->get('Doctrine\ORM\EntityManager'));
+                  },
+                  'Loja\Service\franquia' => function($service){
+                    return new FranquiaService($service->get('Doctrine\ORM\EntityManager'));
+                  },
+                  'LojaAdmin\Form\franquia' => function($service){
+                      $em = $service->get('Doctrine\ORM\EntityManager');
+                      $repository = $em->getRepository('Loja\Entity\funcionario');
+                      $funcionarios = $repository->fetchpairs ();
+                    return new FranquiaFrm(null, $funcionarios);
+                    
+                  },
             ),
                     
         );

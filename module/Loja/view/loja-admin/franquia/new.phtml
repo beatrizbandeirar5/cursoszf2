@@ -1,0 +1,17 @@
+<h3>Nova Franquia</h3>
+
+<br/>
+<?php
+$form = $this->form;
+
+$form->setAttribute('action', $this->url('loja-admin', array('controller'=>'franquia','action'=>'new')));
+$form->prepare();
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id_franquia'));
+echo $this->formRow($form->get('nome_franquia')).'<br/>'; 
+echo $this->formRow($form->get('funcionario')).'<br/>'; 
+echo $this->formRow($form->get('cnpj_franquia')).'<br/>'; 
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+
+
