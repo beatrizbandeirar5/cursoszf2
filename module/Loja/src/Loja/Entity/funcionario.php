@@ -7,9 +7,6 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="funcionario")
  */
 class funcionario {
-   public function __construct($options = null){
-       Configurator::configure($this,$options);
-   }
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -39,6 +36,10 @@ class funcionario {
     function setNomeFuncionario($nome_funcionario) {
         $this->nomeFuncionario = $nome_funcionario;
     }
+      public function __construct($options = null){
+       Configurator::configure($this, $options);
+    } 
+
     public function toString(){
         return $this->nomeFuncionario;
     }

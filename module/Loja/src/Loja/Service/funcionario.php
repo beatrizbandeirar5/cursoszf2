@@ -1,8 +1,7 @@
-<?php
+<?php 
 namespace Loja\Service;
 use Doctrine\ORM\EntityManager;
-use Loja\Entity\funcionario as funcionarioEntity;
-use Livraria\Entity\Configurator;
+use Loja\Entity\funcionario as funcionarioService;
 
 class funcionario {
     /**
@@ -13,12 +12,12 @@ class funcionario {
       $this->em = $em;  
     }
     public function insert(array $data){
-        $entity = new funcionarioEntity($data);
+        $entity = new funcionarioService($data);
         $this->em->persist($entity);
         $this->em->flush();
         return $entity;
     }
-    
+ 
     public function update(array $data){
         $entity = $this->em->getReference('Loja\Entity\funcionario', $data['id']);
         $entity->setNomeFuncionario($data['nome_funcionario']);

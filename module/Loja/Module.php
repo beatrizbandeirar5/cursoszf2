@@ -1,12 +1,12 @@
 <?php
-
-
 namespace Loja;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Loja\Model\funcionarioTable;
-use Loja\Service\funcionario as funcionarioService; 
+use Loja\Service\funcionario as FuncionarioService;
+use Loja\Service\franquia as FranquiaService;
+use Loja\Service\cliente as ClienteService;
 class Module{
     public function getConfig()
     {

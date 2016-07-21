@@ -38,7 +38,9 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Loja\Controller\Index' => 'Loja\Controller\IndexController',
-            'funcionario' => 'LojaAdmin\Controller\funcionarioController'
+            'funcionario' => 'LojaAdmin\Controller\funcionarioController',
+            'franquia' => 'LojaAdmin\Controller\franquiaController',
+            
             ),
     ),
     'view_manager' => array(
